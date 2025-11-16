@@ -4,15 +4,12 @@
 
 [![License: CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-
-
-
 ---
 
 ## **Overview**
 
 This repository contains the **Capstone Edition** of **Graphite**, a visual multi-agent research environment created for the **Kaggle + Google AI Agents Intensive (Nov 2025)**.
-It is a reduced, academically shareable version of the full Graphite platform — refactored specifically for the requirements of the Capstone project.
+This edition is an extensively refactored and expanded version of Graphite, focused on multi-agent orchestration and observability for the Capstone project.
 
 Graphite replaces the constraints of linear chat with an infinite, spatial canvas where every thought, tool call, and agent operation becomes a visual node. Complex tasks unfold as structured workflows instead of unmanageable message logs.
 
@@ -20,7 +17,7 @@ This release introduces the **Agent Orchestrator**, a system-level agent capable
 
 ---
 
-## **Screenshots (Provided to Kaggle Judges)**
+## **Screenshots **
 
 ### **Orchestrator → Web Tool → Desktop Document**
 
@@ -95,21 +92,17 @@ graphite-capstone/
 ├── tools/                 # Code execution, file handlers, API provider
 │
 ├── LICENSE                # CC BY-NC-ND 4.0 (protected release)
-├── README.md              # This file
-└── examples/              # Sample workflows
+├── README.md              
+└── examples/              
 ```
 
 ---
 
 ## **About This Edition**
 
-This repository contains a **restricted, academically shareable version** of Graphite.
-The full Graphite platform (private, ~24k LOC) remains under MIT license in its primary repo.
-This Capstone edition (~7k LOC) exists for:
+This repository contains the **Capstone-focused build** of Graphite. Over nearly two years, Graphite has gone through multiple internal prototypes; this edition represents a significantly expanded architecture with a dedicated Agent Orchestrator and a richer multi-agent tool ecosystem, built specifically in the context of the Kaggle Agents Intensive.
 
-* evaluation by Kaggle judges
-* demonstration of agentic architecture
-* research transparency
+A separate private Graphite repository continues to evolve in parallel, but this Capstone Edition is the one aligned with the course’s themes of planning, tooling, memory, and observability.
 
 It is *not* intended for reuse, incorporation, or commercial deployment.
 
