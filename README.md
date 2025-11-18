@@ -17,7 +17,7 @@ This release introduces the **Agent Orchestrator**, a system-level agent capable
 
 ---
 
-## **Screenshots **
+## Screenshots
 
 ### **Orchestrator → Web Tool → Desktop Document**
 
