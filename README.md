@@ -86,22 +86,6 @@ Graphite stores complete session state via SQLite:
 * agent logs
 * graph structure
 
----
-
-## **Repository Structure**
-
-```
-graphite-capstone/
-│
-├── graphite_core/         # Session manager, persistence, utilities
-├── graphite_agents/       # Orchestrator, PyCoder, WebNode, Reasoning agents
-├── graphite_ui/           # Infinite canvas, nodes, PySide6 components
-├── tools/                 # Code execution, file handlers, API provider
-│
-├── LICENSE                # Apache 2.0
-├── README.md
-└── examples/
-```
 
 ---
 
