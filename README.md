@@ -1,162 +1,131 @@
-# **Graphite – Kaggle Capstone Edition**
+<div align="center"\>
 
-### *A Visual Multi-Agent Canvas for Orchestrated AI Workflows*
+# ⬡ GRAPHITE
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+### The Visual Operating System for AI Agents
 
----
+[](https://opensource.org/licenses/Apache-2.0)
+[](https://kaggle.com)
+[](https://python.org)
+[](https://deepmind.google/technologies/gemini/)
+
+*A spatial, node-based research environment for orchestrating complex multi-agent workflows.*
+
+[Overview](https://www.google.com/search?q=%23overview) • [Visuals](https://www.google.com/search?q=%23visuals) • [Architecture](https://www.google.com/search?q=%23architecture) • [Roadmap](https://www.google.com/search?q=%23roadmap) • [Citation](https://www.google.com/search?q=%23citation)
+
+</div>
+
+-----
 
 ## **Overview**
 
-This repository contains the **Capstone Edition** of **Graphite**, a visual multi-agent research environment created for the **Kaggle + Google AI Agents Intensive (Nov 2025)**.
+**Graphite** replaces the linear feed with an **infinite, node-based canvas**.
 
-This edition is a specialized, refactored release focused on **multi-agent orchestration**, **tool interoperability**, and **research workflow observability**, tailored specifically to demonstrate the competencies required for the Capstone.
+We have access to the smartest AI models in history, yet we interact with them through an interface designed for SMS texting. Trying to architect a complex software system or conduct deep market research in a linear chat window feels like trying to paint a masterpiece through a keyhole.
 
-Graphite replaces the limitations of a linear chat interface with an infinite, spatial canvas where every thought, tool call, and agent operation becomes a visual node. Complex reasoning unfolds not as a message log, but as structured, branching workflows.
+Graphite transforms AI interaction from a timeline into a **topology**. In Graphite, every thought, tool call, and agent interaction is a physical node that can be moved, connected, branched, and inspected.
 
-This edition introduces the **Agent Orchestrator**, a system-level agent capable of planning and executing complex, multi-step workflows using specialized sub-agents and tool calls. This is the central feature developed for the Capstone.
+### **The Core Innovation: The Orchestrator**
 
----
+Instead of the user manually dragging nodes to build a workflow, the **Agent Orchestrator** acts as a specialized autonomous agent. You give it a high-level goal (*"Research Bitcoin's current price and write a Python script to save it to my desktop"*), and it **programmatically builds the graph for you**.
 
-## **Screenshots**
+-----
 
-### **Orchestrator → Web Tool → Desktop Document**
+## **Visuals**
 
+### **1. Orchestrator → Web Tool → Desktop Document**
 *The orchestrator retrieves real-time Bitcoin pricing and auto-generates a local text artifact on the user’s desktop.*
 
-![Orchestrator Price Workflow](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F20124535%2Fc1c748250e940e8db9c5801a53a23ae7%2FScreenshot%202025-11-16%20112132.png?generation=1763327435899819\&alt=media)
+<div align="center">
+  <img src="https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F20124535%2Fc1c748250e940e8db9c5801a53a23ae7%2FScreenshot%202025-11-16%20112132.png?generation=1763327435899819&alt=media" alt="Orchestrator Price Workflow" width="100%">
+</div>
 
----
+<br>
 
-### **Orchestrator → Web Research → PyCoder → Markdown Report**
-
+### **2. Orchestrator → Web Research → PyCoder → Markdown Report**
 *The orchestrator plans a multi-step workflow, gathers grounded sources, synthesizes findings, formats them via PyCoder, and outputs a final Markdown artifact.*
 
-![Orchestrator Markdown Workflow](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F20124535%2F9523f8f02e580ab2b5a3e0f8128333df%2FScreenshot%202025-11-16%20165305.png?generation=1763330021366808\&alt=media)
+<div align="center">
+  <img src="https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F20124535%2F9523f8f02e580ab2b5a3e0f8128333df%2FScreenshot%202025-11-16%20165305.png?generation=1763330021366808&alt=media" alt="Orchestrator Markdown Workflow" width="100%">
+</div>
 
----
+-----
 
-## **Key Capstone Features**
+## **Architecture & Technical Breakdown**
 
-### **✓ Multi-Agent Architecture**
+Graphite is built on a **Parent-Child Node Architecture**. Every node inherits the conversation history of its parent, creating a directed acyclic graph (DAG) of context. The system is a robust **PyQt6 (Python)** application (\~24k LOC).
 
-Graphite demonstrates more than the minimum three agent concepts required:
+### **The Agents**
 
-* Orchestrator agent
-* Sequential and parallel sub-agents
-* Loop / repair agents (PyCoder self-correction cycles)
-* Memory system
-* Context inheritance
-* Tool invocation (web search, code execution, file operations)
-* Observability and execution logging
+| Component | Type | Description |
+| :--- | :--- | :--- |
+| **Orchestrator** | `graphite_orchestrator.py` | **The Brain.** Uses a "ReAct" style loop to output structured JSON plans. It parses these plans to dynamically instantiate other nodes on the canvas. |
+| **Py-Coder** | `graphite_pycoder.py` | **The Hands.** A dual-mode agent. It executes Python via a local `subprocess` sandbox, capturing `stdout` and `stderr` for debugging. |
+| **Reasoning** | `graphite_reasoning.py` | **The Conscience.** Implements a "Plan → Reason → Critique" loop, visualizing the internal monologue often hidden in other apps. |
 
----
+### **Key Features**
 
-### **✓ Orchestrator Agent**
+  * **Multi-Agent Architecture:** Sequential & Hierarchical orchestration where control is passed down a chain of specialized nodes.
+  * **The "Memory Bank":** A physical node that stores key-value pairs (e.g., `{'bitcoin_price': '92000'}`), ensuring data persistence across the graph without polluting the context window.
+  * **Tool Use (Artifacts):** Integrated `duckduckgo_search` for live data and a custom `CodeExecutionWorker` thread that runs generated Python code locally to create real files.
+  * **State Serialization:** Advanced context management via SQLite (`chats.db`) allows users to close the app and resume complex multi-agent negotiations exactly where they left off.
 
-A high-level operator capable of:
+-----
 
-* interpreting the user’s natural-language goal
-* creating a JSON plan
-* executing steps across specialized agents
-* passing data through a Memory Bank
-* producing structured artifacts (reports, files, outputs)
+## **Reflections & The Road Ahead**
 
----
+> *Systems thinking is how I make sense of the world. My obsession with autonomous agents isn't just technical—it is deeply personal. I dig into these architectures because I am driven by a need to understand the cosmos itself: to witness how order emerges from chaos, and how scattered parts coalesce into a living, breathing whole.*
 
-### **✓ Infinite Node-Based Canvas**
+If I had more time, I would take Graphite from a powerful prototype to a full-scale **Agent Operating System**. Here is the roadmap:
 
-A PySide6-powered visual environment:
+### **1. The "Agent Marketplace" (Dynamic Tool Loading)**
 
-* branch any conversation
-* parallel reasoning paths
-* deep context lineage
-* tool agents represented as visual nodes
-* embedded execution logs
+Build a plugin architecture that allows Graphite to dynamically load tools from a community marketplace. Dragging a **"Jira Node"** or **"Salesforce Node"** onto the canvas instantly gives the Orchestrator the ability to interact with those platforms without writing glue code.
 
----
+### **2. Recursive Orchestration (Agents Hiring Agents)**
 
-### **✓ Persistence & Memory**
+Implement **nested orchestration**, where an Orchestrator Node can spawn *another* Orchestrator Node as a sub-task. This allows for fractally complex workflows—one master agent delegating to sub-agents who manage coding, testing, and marketing independently.
 
-Graphite stores complete session state via SQLite:
+### **3. "Live" Memory & Vector Integration**
 
-* node content
-* spatial positions
-* tool results
-* agent logs
-* graph structure
+Integrate a local vector database (like **ChromaDB**) directly into the graph. This transforms the ephemeral Memory Bank into a **long-term knowledge base** that grows alongside the user's projects.
 
+### **4. The "Self-Evolving" Topology (Meta-Optimization)**
 
----
+**The Endgame.** Implement a **Meta-Orchestrator** that watches the graph execute in real-time. If a path fails or is inefficient, the AI acts as a self-healing architect—deleting bad nodes, rewiring connections, and optimizing the topology on the fly without human intervention.
 
-## **About This Edition**
-
-This is the **Capstone-focused build** of Graphite. The full internal development version continues privately, while this edition distills the system into a clean architecture aligned with the course themes of:
-
-* planning
-* tooling
-* memory
-* observability
-* multi-agent orchestration
-
-While fully functional, this edition is provided **strictly as an educational, open-source submission**, not as a production-ready or commercial release.
-
----
-
-## **License — Apache 2.0**
-
-This Capstone Edition of Graphite is released under the **Apache License 2.0**, a widely-used open-source license that allows:
-
-✔ Use
-✔ Modification
-✔ Distribution
-✔ Private or commercial use
-✔ Derivative works
-
-**Provided that** you include:
-
-* attribution to the original author (**Matthew Robert Wesney**)
-* preservation of the license text
-* notice of any modifications
-
-Apache 2.0 also includes:
-
-* explicit patent rights
-* explicit limitation of liability
-* explicit disclaimer of warranty
-
-This ensures the project is open, usable, and protected in an industry-standard way suitable for software.
-
----
-
-## **Author**
-
-**Matthew Robert Wesney**
-
----
+-----
 
 ## **Competition Track**
 
-**Freestyle Track — Agents Intensive Kaggle Capstone Project (Nov 2025)**
+**Freestyle Track** — *Graphite doesn't just fit into a category; it is a tool for building agents in ANY category.*
 
----
+### **About This Edition**
 
-## **A Personal Note**
+This is the **Capstone-focused build** of Graphite for the **Kaggle + Google AI Agents Intensive (Nov 2025)**. The full internal development version continues privately, while this edition distills the system into a clean architecture aligned with the course themes of planning, tooling, memory, and observability.
 
-For nearly two years, Graphite has been an evolving idea — a living system shaped by curiosity, frustration with linear interfaces, and the desire to work with AI in a way that feels intuitive rather than restrictive.
+-----
 
-When I joined the Kaggle + Google Agents Intensive, I realized it was the perfect opportunity to refactor Graphite: reorganize the architecture, expand the agent system, and build the Orchestrator as the missing core. This Capstone Edition represents that convergence — the discipline of the course, the philosophy of Graphite, and countless hours refining how humans and AI can think together.
+## **License**
 
-Even in this reduced form, it reflects the same belief the full version does:
-that clarity, structure, and well-designed tools can change how we work, think, and create.
+This project is licensed under the **Apache License 2.0**.
 
----
+-----
 
 ## **Citation**
 
+If you use concepts from Graphite in your research or development, please cite:
+
 ```
-Matthew Wesney. Graphite – Kaggle Capstone Edition.
-Kaggle Agents Intensive Capstone Project (2025).
+@software{wesney2025graphite,
+  author = {Wesney, Matthew},
+  title = {Graphite: A Visual Multi-Agent Canvas},
+  note = {Kaggle Agents Intensive Capstone Project},
+  year = {2025},
+  url = {https://github.com/dovvnloading/Graphite}
+}
 ```
 
-
+<div align="center"\>
+<sub\>Built with 🖤 by Matthew Robert Wesney</sub>
+</div>
