@@ -2,26 +2,27 @@
 
 ### *A Visual Multi-Agent Canvas for Orchestrated AI Workflows*
 
-[![License: CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ---
 
 ## **Overview**
 
 This repository contains the **Capstone Edition** of **Graphite**, a visual multi-agent research environment created for the **Kaggle + Google AI Agents Intensive (Nov 2025)**.
-This edition is an extensively refactored and expanded version of Graphite, focused on multi-agent orchestration and observability for the Capstone project.
 
-Graphite replaces the constraints of linear chat with an infinite, spatial canvas where every thought, tool call, and agent operation becomes a visual node. Complex tasks unfold as structured workflows instead of unmanageable message logs.
+This edition is a specialized, refactored release focused on **multi-agent orchestration**, **tool interoperability**, and **research workflow observability**, tailored specifically to demonstrate the competencies required for the Capstone.
 
-This release introduces the **Agent Orchestrator**, a system-level agent capable of planning and executing multi-step workflows using specialized sub-agents. The Orchestrator is the central feature developed specifically for this Capstone submission.
+Graphite replaces the limitations of a linear chat interface with an infinite, spatial canvas where every thought, tool call, and agent operation becomes a visual node. Complex reasoning unfolds not as a message log, but as structured, branching workflows.
+
+This edition introduces the **Agent Orchestrator**, a system-level agent capable of planning and executing complex, multi-step workflows using specialized sub-agents and tool calls. This is the central feature developed for the Capstone.
 
 ---
 
-## Screenshots
+## **Screenshots**
 
 ### **Orchestrator → Web Tool → Desktop Document**
 
-*The orchestrator retrieves real-time Bitcoin pricing and auto-generates a local text artifact on the user's desktop.*
+*The orchestrator retrieves real-time Bitcoin pricing and auto-generates a local text artifact on the user’s desktop.*
 
 ![Orchestrator Price Workflow](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F20124535%2Fc1c748250e940e8db9c5801a53a23ae7%2FScreenshot%202025-11-16%20112132.png?generation=1763327435899819\&alt=media)
 
@@ -29,7 +30,7 @@ This release introduces the **Agent Orchestrator**, a system-level agent capable
 
 ### **Orchestrator → Web Research → PyCoder → Markdown Report**
 
-*The orchestrator plans a multi-step workflow, gathers grounded sources, synthesizes findings, formats them into Markdown via PyCoder, and outputs an artifact.*
+*The orchestrator plans a multi-step workflow, gathers grounded sources, synthesizes findings, formats them via PyCoder, and outputs a final Markdown artifact.*
 
 ![Orchestrator Markdown Workflow](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F20124535%2F9523f8f02e580ab2b5a3e0f8128333df%2FScreenshot%202025-11-16%20165305.png?generation=1763330021366808\&alt=media)
 
@@ -39,44 +40,50 @@ This release introduces the **Agent Orchestrator**, a system-level agent capable
 
 ### **✓ Multi-Agent Architecture**
 
-Graphite demonstrates more than the required three concepts:
+Graphite demonstrates more than the minimum three agent concepts required:
 
 * Orchestrator agent
-* Sequential & parallel sub-agents
-* Loop agents (PyCoder repair cycles)
+* Sequential and parallel sub-agents
+* Loop / repair agents (PyCoder self-correction cycles)
 * Memory system
 * Context inheritance
-* Tool invocation (web, code execution, file handling)
-* Observability & logging
+* Tool invocation (web search, code execution, file operations)
+* Observability and execution logging
+
+---
 
 ### **✓ Orchestrator Agent**
 
-A high-level programmatic operator capable of:
+A high-level operator capable of:
 
-* interpreting a user’s natural-language goal
-* generating a JSON plan
-* executing steps across multiple agents
-* passing data via a Memory Bank
-* producing artifacts (reports, files, results)
+* interpreting the user’s natural-language goal
+* creating a JSON plan
+* executing steps across specialized agents
+* passing data through a Memory Bank
+* producing structured artifacts (reports, files, outputs)
+
+---
 
 ### **✓ Infinite Node-Based Canvas**
 
 A PySide6-powered visual environment:
 
 * branch any conversation
-* parallel reasoning
+* parallel reasoning paths
 * deep context lineage
-* tool agents as visual elements
-* execution logs embedded in nodes
+* tool agents represented as visual nodes
+* embedded execution logs
+
+---
 
 ### **✓ Persistence & Memory**
 
-Graphite stores full session state using SQLite:
+Graphite stores complete session state via SQLite:
 
 * node content
-* position on canvas
-* tool outputs
-* logs
+* spatial positions
+* tool results
+* agent logs
 * graph structure
 
 ---
@@ -86,60 +93,61 @@ Graphite stores full session state using SQLite:
 ```
 graphite-capstone/
 │
-├── graphite_core/         # Session manager, persistence, core utilities
-├── graphite_agents/       # Orchestrator, PyCoder, WebNode, Reasoning, Memory
-├── graphite_ui/           # PySide6 infinite canvas, nodes, containers
+├── graphite_core/         # Session manager, persistence, utilities
+├── graphite_agents/       # Orchestrator, PyCoder, WebNode, Reasoning agents
+├── graphite_ui/           # Infinite canvas, nodes, PySide6 components
 ├── tools/                 # Code execution, file handlers, API provider
 │
-├── LICENSE                # CC BY-NC-ND 4.0 (protected release)
-├── README.md              
-└── examples/              
+├── LICENSE                # Apache 2.0
+├── README.md
+└── examples/
 ```
 
 ---
 
 ## **About This Edition**
 
-This repository contains the **Capstone-focused build** of Graphite. Over nearly two years, Graphite has gone through multiple internal prototypes; this edition represents a significantly expanded architecture with a dedicated Agent Orchestrator and a richer multi-agent tool ecosystem, built specifically in the context of the Kaggle Agents Intensive.
+This is the **Capstone-focused build** of Graphite. The full internal development version continues privately, while this edition distills the system into a clean architecture aligned with the course themes of:
 
-A separate private Graphite repository continues to evolve in parallel, but this Capstone Edition is the one aligned with the course’s themes of planning, tooling, memory, and observability.
+* planning
+* tooling
+* memory
+* observability
+* multi-agent orchestration
 
-It is *not* intended for reuse, incorporation, or commercial deployment.
+While fully functional, this edition is provided **strictly as an educational, open-source submission**, not as a production-ready or commercial release.
 
 ---
 
-## **License**
+## **License — Apache 2.0**
 
-### **CC BY-NC-ND 4.0 — Attribution + NonCommercial + NoDerivatives**
+This Capstone Edition of Graphite is released under the **Apache License 2.0**, a widely-used open-source license that allows:
 
-This is a **protective license**.
-It permits:
+✔ Use
+✔ Modification
+✔ Distribution
+✔ Private or commercial use
+✔ Derivative works
 
-* viewing the code
-* cloning for local evaluation
-* running the application
+**Provided that** you include:
 
-It **does not** permit:
+* attribution to the original author (**Matthew Robert Wesney**)
+* preservation of the license text
+* notice of any modifications
 
-* commercial use
-* modification
-* redistribution
-* derivative works
-* incorporation into other software
-* code extraction for training datasets
-* any reuse beyond viewing + evaluating
+Apache 2.0 also includes:
 
-Professionally:
+* explicit patent rights
+* explicit limitation of liability
+* explicit disclaimer of warranty
 
-> “You may look, but you may not touch.”
-
-The full license text is provided in `/LICENSE`.
+This ensures the project is open, usable, and protected in an industry-standard way suitable for software.
 
 ---
 
 ## **Author**
 
-**Matthew Wesney**
+**Matthew Robert Wesney**
 
 ---
 
@@ -151,11 +159,12 @@ The full license text is provided in `/LICENSE`.
 
 ## **A Personal Note**
 
-For nearly two years, Graphite has been a living, evolving project—something I’ve built piece by piece, often late at night, driven by equal parts curiosity and necessity. What started as a simple attempt to break free from linear chat interfaces grew into a full visual reasoning system, an exploration of how humans and AI might collaborate more intuitively.
+For nearly two years, Graphite has been an evolving idea — a living system shaped by curiosity, frustration with linear interfaces, and the desire to work with AI in a way that feels intuitive rather than restrictive.
 
-When I joined the Kaggle + Google Agents Intensive, I realized it was the perfect moment to refactor Graphite—strip it down, reorganize its architecture, and build the Orchestrator as the missing cornerstone. This Capstone Edition represents that convergence: the discipline of the course, the philosophy behind Graphite, and the quiet, persistent work of building something that reflects how I think and how I solve problems.
+When I joined the Kaggle + Google Agents Intensive, I realized it was the perfect opportunity to refactor Graphite: reorganize the architecture, expand the agent system, and build the Orchestrator as the missing core. This Capstone Edition represents that convergence — the discipline of the course, the philosophy of Graphite, and countless hours refining how humans and AI can think together.
 
-It means a great deal to me to share this version. Even in its reduced form, it carries the spirit of the full system: a belief in clarity, structure, and the power of well-designed agents working together.
+Even in this reduced form, it reflects the same belief the full version does:
+that clarity, structure, and well-designed tools can change how we work, think, and create.
 
 ---
 
@@ -165,3 +174,5 @@ It means a great deal to me to share this version. Even in its reduced form, it 
 Matthew Wesney. Graphite – Kaggle Capstone Edition.
 Kaggle Agents Intensive Capstone Project (2025).
 ```
+
+
