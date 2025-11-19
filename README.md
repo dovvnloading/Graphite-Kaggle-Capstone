@@ -11,7 +11,7 @@
 
 *A spatial, node-based research environment for orchestrating complex multi-agent workflows.*
 
-[Overview](https://www.google.com/search?q=%23overview) • [Visuals](https://www.google.com/search?q=%23visuals) • [Architecture](https://www.google.com/search?q=%23architecture) • [Roadmap](https://www.google.com/search?q=%23roadmap) • [Citation](https://www.google.com/search?q=%23citation)
+[Overview](#overview) • [Visuals](#visuals) • [Architecture](#architecture) • [Roadmap](#roadmap) • [Citation](#citation)
 
 </div>
 
@@ -51,7 +51,7 @@ Instead of the user manually dragging nodes to build a workflow, the **Agent Orc
 
 -----
 
-## **Architecture & Technical Breakdown**
+## **Architecture**
 
 Graphite is built on a **Parent-Child Node Architecture**. Every node inherits the conversation history of its parent, creating a directed acyclic graph (DAG) of context. The system is a robust **PyQt6 (Python)** application (\~24k LOC).
 
@@ -72,7 +72,7 @@ Graphite is built on a **Parent-Child Node Architecture**. Every node inherits t
 
 -----
 
-## **Reflections & The Road Ahead**
+## **Roadmap**
 
 > *Systems thinking is how I make sense of the world. My obsession with autonomous agents isn't just technical—it is deeply personal. I dig into these architectures because I am driven by a need to understand the cosmos itself: to witness how order emerges from chaos, and how scattered parts coalesce into a living, breathing whole.*
 
