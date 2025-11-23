@@ -33,21 +33,18 @@ Instead of the user manually dragging nodes to build a workflow, the **Agent Orc
 
 ## **Visuals**
 
-### **1. Orchestrator → Web Tool → Desktop Document**
-*The orchestrator retrieves real-time Bitcoin pricing and auto-generates a local text artifact on the user’s desktop.*
-
-<div align="center">
-  <img src="https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F20124535%2Fc1c748250e940e8db9c5801a53a23ae7%2FScreenshot%202025-11-16%20112132.png?generation=1763327435899819&alt=media" alt="Orchestrator Price Workflow" width="100%">
-</div>
-
-<br>
-
-### **2. Orchestrator → Web Research → PyCoder → Markdown Report**
+### **1. Orchestrator → Web Research → PyCoder → Markdown Report**
 *The orchestrator plans a multi-step workflow, gathers grounded sources, synthesizes findings, formats them via PyCoder, and outputs a final Markdown artifact.*
 
 <div align="center">
-  <img src="https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F20124535%2F9523f8f02e580ab2b5a3e0f8128333df%2FScreenshot%202025-11-16%20165305.png?generation=1763330021366808&alt=media" alt="Orchestrator Markdown Workflow" width="100%">
+  <img src="https://github.com/user-attachments/assets/3554de98-6411-4747-a746-16ff709b52f0" alt="Orchestrator Price Workflow" width="100%">
 </div>
+
+
+
+
+
+
 
 -----
 
